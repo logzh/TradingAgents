@@ -24,7 +24,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:${{ github.workspace }} \
             -w ${{ github.workspace }} \
-            -e PLUGIN_TARGET_URL="https://cnb.cool/logzh/${{ steps.repo-name.outputs.name }}.git" \
+            -e PLUGIN_TARGET_URL="https://cnb.cool/{{CNB_OWNER}}/${{ steps.repo-name.outputs.name }}.git" \
             -e PLUGIN_AUTH_TYPE="https" \
             -e PLUGIN_USERNAME="cnb" \
             -e PLUGIN_PASSWORD=${{ secrets.CNB_TOKEN }} \

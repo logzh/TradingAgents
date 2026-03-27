@@ -10,10 +10,10 @@ feat*:
   push:
     - stages:
         - name: sync to github
-          imports: https://cnb.cool/logzh/my-keys/-/blob/main/env.yml
+          imports: {{CNB_IMPORTS_URL}}
           image: tencentcom/git-sync
           settings:
-            target_url: https://github.com/logzh/${CNB_REPO_NAME}.git
+            target_url: https://github.com/{{GITHUB_OWNER}}/${CNB_REPO_NAME}.git
             auth_type: https
             username: ${GIT_USERNAME}
             password: ${GIT_ACCESS_TOKEN}
